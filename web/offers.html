@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>O F F E R S</title>
+        <link href="style.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="hero" >
+                <p>Offers on all your favourite apartments</p>
+            <h1>COMING SOON</h1>
+            <hr>
+            <p id="launch"></p>
+            </div>
+        </header>
+    </body>
+    <script>
+       var countDownDate=new Date("Jan 1,2019 00:00:00").getTime();
+       var x=setInterval(function()
+       {
+           var now =new Date().getTime();
+           var distance=countDownDate - now;
+           
+           var days=Math.floor(distance/(1000*60*60*24));
+           var hours=Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+           var minutes=Math.floor((distance%(1000*60*60))/(1000*60));
+           var seconds=Math.floor((distance%(1000*60))/1000);
+           
+           document.getElementById("launch").innerHTML=days + "d" + hours + "h" +minutes + "m" + seconds + "s";
+           
+           if(distance<0)
+           {
+               clearInterval(x);
+               document.getElementById("launch").innerHTML= "EXPIRED";
+           }
+           
+       },1000);
+        
+       </script>
+    
+    
+</html>
